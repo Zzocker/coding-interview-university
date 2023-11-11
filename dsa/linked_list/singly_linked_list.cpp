@@ -18,6 +18,7 @@ template <typename T> class LinkedList{
         void add_front(const T& e);
         void remove_front();
         void debug() const;
+        void reverse();
     private:
         Node<T>* head;
 };
@@ -53,12 +54,25 @@ template <typename T> void LinkedList<T>::debug() const{
     cout << endl;
 }
 
+template <typename T> void LinkedList<T>::reverse() {
+    Node<T>* ptr = head;
+    head = NULL;
+    while (ptr != NULL){
+        Node<T>* next = ptr->next;
+        ptr->next = NULL;
+        ptr->next = head;
+        head = ptr;
+        ptr = next;
+    }
+}
+
 int main(){
     cout << "Singly Linked list" << endl;
     LinkedList<int> list;
     list.add_front(1);
     list.add_front(2);
     list.add_front(3);list.add_front(4);list.add_front(5);
-    list.remove_front();
+    // list.remove_front();
+    list.reverse();
     list.debug();
 }
