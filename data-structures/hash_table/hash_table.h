@@ -2,11 +2,9 @@
 #define HASH_MAP_H
 
 #include <vector>
-#include <list>
 #include <string>
 
 using std::vector;
-using std::list;
 using std::string;
 
 const int MIN_BUCKET_SIZE = 8;
@@ -23,9 +21,10 @@ class HashTableException{
 
 class ChainNode{
     public:
-        ChainNode(int k, int v): key{k}, value{v} {}
+        ChainNode(int k, int v): key{k}, value{v}, deleted{false} {}
         int key;
         int value;
+        bool deleted;
 };
 
 class HashTable{
@@ -38,7 +37,7 @@ class HashTable{
     private:
         int n;
         int m;
-        vector<list<ChainNode>> bucket;
+        vector<ChainNode*> bucket;
         int hash(int key, int m) const;
         void resize(int new_m);
 };

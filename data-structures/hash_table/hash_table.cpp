@@ -2,58 +2,74 @@
 #include "hash_table.h"
 #include <iostream>
 
-list<ChainNode>::iterator find(list<ChainNode>& list, int key){
-    auto itr = list.begin();
-    while (itr != list.end()){
-        if (itr->key == key) break;
-        itr++;
-    }
-    return itr;
-}
+HashTable::HashTable() : n{0}, m{MIN_BUCKET_SIZE}, bucket {vector<ChainNode*> (m)} {}
 
-list<ChainNode>::const_iterator find(const list<ChainNode>& list, int key){
-    auto itr = list.begin();
-    while (itr != list.end()){
-        if (itr->key == key) break;
-        itr++;
-    }
-    return itr;
-}
+const int H_2 = 7;
 
-HashTable::HashTable() : n{0}, m{MIN_BUCKET_SIZE}, bucket {vector<list<ChainNode>> (m)} {}
+// open address + double hash
 
 void HashTable::add(int key, int value) {
     if (n >= m) resize(GROWTH_FACTOR*m);
-    int index = hash(key, m);
-    auto node = find(bucket[index], key);
-    if (node != bucket[index].end()){
-        node->value = value;
-    }else {
-        bucket[index].push_front(ChainNode(key, value));
-        n++;
+    int h = hash(key, m);
+    int trail = 0;
+    int index = h;
+    while (trail < m ){
+        index = (h + trail*H_2) % m;
+        if (bucket[index] == NULL){
+            bucket[index] = new ChainNode(key, value);
+            n++;
+            break;
+        }else if (bucket[index]->key == key && bucket[index]->deleted){
+            bucket[index]->value = value;
+            bucket[index]->deleted = false;
+            n++;
+        }else if (bucket[index]->key == key){
+            bucket[index]->value = value;
+        }
+        trail++;
     }
 }
 
 bool HashTable::exists(int key) const {
-    int index = hash(key, m);
-    auto node = find(bucket[index], key);
-    return node != bucket[index].end();
+    int h = hash(key, m);
+    int trail = 0;
+    int index = h;
+    while (trail < m){
+        index = (h + trail*H_2)%m;
+        if (bucket[index] == NULL || (bucket[index]->key == key && bucket[index]->deleted))return false;
+        else if (bucket[index]->key == key)return true;
+        trail++;
+    }
+    return false;
 }
 
 int HashTable::get(int key) const {
-    int index = hash(key, m);
-    auto node = find(bucket[index], key);
-    if (node == bucket[index].end()) throw(HashTableException("key not found"));
-    return node->value;
+    int h = hash(key, m);
+    int trail = 0;
+    int index = h;
+    while (trail < m){
+        index = (h + trail*H_2)%m;
+        if (bucket[index] == NULL || (bucket[index]->key == key && bucket[index]->deleted)) throw(HashTableException("key not found"));
+        if (bucket[index]->key == key) return bucket[index]->value;
+        trail++;
+    }
+    throw(HashTableException("key not found"));
 }
 
 void HashTable::remove(int key){
-    int index = hash(key, m);
-    auto node = find(bucket[index], key);
-    if (node == bucket[index].end()) return;
-    bucket[index].erase(node);
-    n--;
-    if (4*n <= m) resize(m/SHRINK_fACTOR);
+    int h = hash(key, m);
+    int trail = 0;
+    int index = h;
+    while (trail < m){
+        index = (h + trail*H_2)%m;
+        if (bucket[index] == NULL || (bucket[index]->key == key && bucket[index]->deleted)) return;
+        else if (bucket[index]->key == key) {
+            bucket[index]->deleted = true;
+            n--;
+            return;
+        }
+        trail++;
+    }
 }
 
 int HashTable::hash(int key, int m) const {
@@ -63,13 +79,23 @@ int HashTable::hash(int key, int m) const {
 
 void HashTable::resize(int new_m) {
     if (new_m <= MIN_BUCKET_SIZE) return;
-    vector<list<ChainNode>> new_bucket(new_m);
+    vector<ChainNode*> new_bucket(new_m);
     for (int i=0;i<bucket.size();i++){
-        auto itr = bucket[i].begin();
-        while (itr != bucket[i].end()){
-            int index = hash(itr->key, new_m);
-            new_bucket[index].push_front(ChainNode(itr->key, itr->value));
-            itr++;
+        if (bucket[i] != NULL){
+           if (bucket[i]->deleted) delete bucket[i];
+           else {
+            int h = hash(bucket[i]->key,new_m);
+            int trail = 0;
+            int index = h;
+            while (trail < new_m){
+                int index = (h + trail*H_2)%new_m;
+                if (new_bucket[index] == NULL) {
+                    new_bucket[index] = bucket[i];
+                    break;
+                }
+                trail ++;
+            }
+           } 
         }
     }
     m = new_m;
