@@ -2,10 +2,10 @@
 #define QUEUE_H
 
 #include <string>
-#include <list>
+#include <vector>
 
 using std::string;
-using std::list;
+using std::vector;
 
 class QueueException{
     public:
@@ -17,13 +17,16 @@ class QueueException{
 
 class Queue{
     public:
-        Queue();
+        Queue(int s);
         void enqueue(int elem);
         int dequeue();
         int front() const;
         bool is_empty() const;
+        bool is_full() const;
     private:
-        list<int> bucket;
+        vector<int> bucket;
+        int r_index;
+        int w_index;
 };
 
 #endif

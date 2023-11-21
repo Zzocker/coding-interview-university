@@ -628,29 +628,18 @@ if you can identify the runtime complexity of different algorithms. It's a super
         - remove_value(value) - removes the first item in the list with this value
 
 - ### Stack
-    - [ ] [Stacks (video)](https://www.coursera.org/lecture/data-structures/stacks-UdKzQ)
-    - [ ] [[Review] Stacks in 3 minutes (video)](https://youtu.be/KcT3aVgrrpU)
-    - [ ] Will not implement. Implementing with the array is trivial
+    - [X] [Implementation](./data-structures/stack/main.cpp)
 
 - ### Queue
-    - [ ] [Queue (video)](https://www.coursera.org/lecture/data-structures/queues-EShpq)
-    - [ ] [Circular buffer/FIFO](https://en.wikipedia.org/wiki/Circular_buffer)
-    - [ ] [[Review] Queues in 3 minutes (video)](https://youtu.be/D6gu-_tmEpQ)
-    - [ ] Implement using linked-list, with tail pointer:
+    - [X] [Implement using linked-list, with tail pointer:](https://github.com/Zzocker/coding-interview-university/blob/3bb0d47d9753685a0f8957338313fdce6a9b296a/data-structures/queue/main.cpp)
         - enqueue(value) - adds value at a position at the tail
         - dequeue() - returns value and removes least recently added element (front)
         - empty()
-    - [ ] Implement using a fixed-sized array:
+    - [X] [Implement using a fixed-sized array:](./data-structures/queue/main.cpp)
         - enqueue(value) - adds item at end of available storage
         - dequeue() - returns value and removes least recently added element
         - empty()
         - full()
-    - [ ] Cost:
-        - a bad implementation using a linked list where you enqueue at the head and dequeue at the tail would be O(n)
-            because you'd need the next to last element, causing a full traversal of each dequeue
-        - enqueue: O(1) (amortized, linked list and array [probing])
-        - dequeue: O(1) (linked list and array)
-        - empty: O(1) (linked list and array)
 
 - ### Hash table
     - [X] Videos:
