@@ -25,4 +25,8 @@ int main(){
         CountingSort algo;
         algo.test();
     }
+    {
+        KMP kmp;
+        kmp.test();
+    }
 }

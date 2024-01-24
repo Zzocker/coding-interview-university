@@ -185,3 +185,55 @@ class CountingSort{
             }
         }
 };
+
+class KMP{
+    public:
+        void test(){
+            string str{"mississippi"};
+            {
+                string pattern{"issip"};
+                auto ans = solution(str, pattern);
+                assert(ans==4);
+            }
+            {
+                string pattern{"sab"};
+                auto ans = solution(str, pattern);
+                assert(ans==-1);
+            }
+        }
+    private:
+        // lps: longest proper prefix suffix
+        vector<int> get_lps(const string& pattern){
+            int n = pattern.size();
+            vector<int> lps(n);
+            int len = 0;
+            lps[0] = 0;
+            int i = 1;
+            while (i < n){
+                if (pattern[i] == pattern[len]){
+                    len++;
+                    lps[i] = len;
+                    i++;
+                }else if (len == 0){
+                    lps[i] = 0;
+                    i++;
+                }else len = lps[len-1];
+            }
+            return lps;
+        }
+
+        int solution(string str, string pattern){
+            int n = str.size();
+            auto lps = get_lps(pattern);
+            int i = 0;
+            int j = 0;
+            while (i < n){
+                if (str[i] == pattern[j]){
+                    i++;j++;
+                    if (j >= pattern.size()) return i - pattern.size();
+                }else if (j == 0)i++;
+                else j = lps[j-1];
+            }
+            return -1;
+        }
+};
