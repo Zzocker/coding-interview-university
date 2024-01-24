@@ -15,4 +15,14 @@ int main(){
         BinarySearch algo;
         algo.test();
     }
+
+    {
+        RadixSort algo;
+        algo.test();
+    }
+
+    {
+        CountingSort algo;
+        algo.test();
+    }
 }
