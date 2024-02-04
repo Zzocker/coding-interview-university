@@ -10,3 +10,4 @@
 
 - [Frog Jump](https://www.codingninjas.com/studio/problems/frog-jump_3621012)
 - [Minimal Cost](https://www.codingninjas.com/studio/problems/minimal-cost_8180930)
+- [Maximum sum of non-adjacent elements](https://www.codingninjas.com/studio/problems/maximum-sum-of-non-adjacent-elements_843261)

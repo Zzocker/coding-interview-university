@@ -7,4 +7,7 @@ int main(){
     {
         MinimalCost problem;problem.solve();
     }
+    {
+        MaxSumOfNonAdjacentElements problem;problem.solve();
+    }
 }

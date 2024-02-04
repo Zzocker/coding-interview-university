@@ -88,3 +88,46 @@ class MinimalCost{
             return dp[0];
         }
 };
+
+// https://www.codingninjas.com/studio/problems/maximum-sum-of-non-adjacent-elements_843261
+class MaxSumOfNonAdjacentElements{
+    public:
+        void solve(){
+            vector<int> nums{1,2,3,1,3,5,8,1,9};
+            auto bottom_up_ans = bottom_up(nums);
+            auto top_down_ans = bottom_up(nums);
+            assert(bottom_up_ans == top_down_ans);
+        }
+    private:
+        int _bottom_up(const vector<int>& nums, int i, vector<int>& dp){
+            if (i >= nums.size()) return 0;
+            if (dp[i] != -1) return dp[i];
+            return dp[i] = max(
+                nums[i] + _bottom_up(nums, i+2, dp), // include
+                _bottom_up(nums, i+1, dp) // not-include
+            );
+        }
+
+        int bottom_up(const vector<int>& nums){
+            vector<int> dp(nums.size(), -1);
+            return _bottom_up(nums, 0, dp);
+        }
+
+        int top_down(const vector<int>& nums){
+            // vector<int> dp(nums.size());
+            // dp[nums.size()-1] = nums.back();
+            int next_next = 0;
+            int next = nums.back();
+            for (int i=nums.size()-2;i>=0;i--){
+                // int option_1 = dp[i+1]; // not-include
+                // int option_2 = nums[i] + (i+2 >= nums.size() ? 0 : dp[i+2]); // include
+                // dp[i] = max(option_1, option_2);
+                int option_1 = next; // not-include
+                int option_2 = nums[i] + next_next;
+                next_next = next;
+                next = max(option_1, option_2);
+            }
+            // return dp[0];
+            return next;
+        }
+};
