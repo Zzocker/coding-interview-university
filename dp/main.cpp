@@ -10,4 +10,7 @@ int main(){
     {
         MaxSumOfNonAdjacentElements problem;problem.solve();
     }
+    {
+        NinjaTraining problem;problem.solve();
+    }
 }

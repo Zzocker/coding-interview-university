@@ -131,3 +131,66 @@ class MaxSumOfNonAdjacentElements{
             return next;
         }
 };
+
+// https://www.codingninjas.com/studio/problems/ninja-s-training_3621003
+class NinjaTraining{
+    public:
+        void solve(){
+            vector<vector<int>> points{
+                    {1, 2, 5}, 
+                    {3, 1, 1},
+                    {3, 3, 3},
+            };
+            auto top_down_ans = top_down(points);
+            assert(top_down_ans == 11);
+            auto bottom_up_ans = bottom_up(points);
+            assert(bottom_up_ans == top_down_ans);
+        }
+
+        int dp[100001][3];
+        // i -> day
+        // j -> don't perform jth task
+        int _top_down(const vector<vector<int>>& points, int i, int j){
+            if (i >= points.size()) return 0;
+            if (dp[i][j] != -1) return dp[i][j];
+            int out{INT_MIN};
+            for (int k=0;k<3;k++){
+                if (k != j)out = max(out, points[i][k] + _top_down(points, i+1, k));
+            }
+            return dp[i][j] = out;
+        }
+
+        int top_down(const vector<vector<int>>& points){
+            memset(dp, -1, sizeof(dp));
+            int option_1 = _top_down(points, 0, 0);
+            int option_2 = _top_down(points, 0, 1);
+            int option_3 = _top_down(points, 0, 2);
+            return max(option_1, max(option_2, option_3));
+        }
+
+        int bottom_up(const vector<vector<int>>& points){
+            int n = points.size();
+            // vector<vector<int>> dp(n, vector<int> (3));
+            // dp[n-1][0] = max(points[n-1][1], points[n-1][2]);
+            // dp[n-1][1] = max(points[n-1][0], points[n-1][2]);
+            // dp[n-1][2] = max(points[n-1][0], points[n-1][1]);
+            vector<int> next(3);
+            next[0] = max(points[n-1][1], points[n-1][2]);
+            next[1] = max(points[n-1][0], points[n-1][2]);
+            next[2] = max(points[n-1][0], points[n-1][1]);
+            for (int i=n-2;i>=0;i--){
+                vector<int> new_next(3);
+                for (int j=0;j<3;j++){
+                    int out{INT_MIN};
+                    for (int k=0;k<3;k++){
+                        // if (k != j)out = max(out, points[i][k] + dp[i+1][k]);
+                        if (k != j)out = max(out, points[i][k] + next[k]);
+                    }
+                    // dp[i][j] = out;
+                    new_next[j] = out;
+                }
+                next = new_next;
+            }
+            return max(next[0], max(next[1], next[2]));
+        }
+};
