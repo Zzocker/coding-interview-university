@@ -194,3 +194,103 @@ class NinjaTraining{
             return max(next[0], max(next[1], next[2]));
         }
 };
+
+class UniquePath{
+    public:
+        void solve(){
+            int m{3}, n{2};
+            auto top_down_ans = top_down(m,n);
+            auto bottom_up_ans = bottom_up(m,n);
+            assert(top_down_ans == 3);
+        }
+    private:
+        int dp[16][16];
+        int _top_down(int m,int n, int i, int j){
+            if (i == m -1 && j == n - 1) return 1;
+            if (dp[i][j] != -1) return dp[i][j];
+            int out{0};
+            // move down
+            if (i + 1 < m) out+=_top_down(m,n,i+1, j);
+            // move right
+            if (j + 1 < n) out+=_top_down(m,n, i, j+1);
+            return dp[i][j] = out;
+        }
+
+        int top_down(int m, int n){
+            memset(dp, -1, sizeof(dp));
+            return _top_down(m,n, 0, 0);
+        }
+
+        int bottom_up(int m, int n){
+            vector<int> next_row(n);
+            for (int i=m-1;i>=0;i--){
+                vector<int> new_next_row(n);
+                for (int j=n-1;j>=0;j--){
+                    if (i == m - 1 && j == n-1)new_next_row[j]=1;
+                    else {
+                        int out{0};
+                        // move down
+                        if (i + 1 < m) out+=next_row[j];
+                        // move right
+                        if (j + 1 < n) out+=new_next_row[j+1];
+                        new_next_row[j] = out;
+                    }
+                }
+                next_row = new_next_row;
+            }
+            return next_row[0];
+        }
+};
+
+class MinPathSum{
+    public:
+        void solve(){
+            vector<vector<int>> grid{
+                    {5, 9, 6},
+                    {11, 5, 2},
+            };
+            auto top_down_ans = top_down(grid);
+            assert(top_down_ans == 21);
+            int bottom_up_ans = bottom_down(grid);
+        }
+    
+    private:
+
+        int dp[101][101];
+        int _top_down(const vector<vector<int>>& grid, int i, int j){
+            if (i == grid.size() - 1 && j == grid[0].size() - 1) return grid[i][j];
+            if (dp[i][j] != -1) return dp[i][j];
+            int best_option{INT_MAX};
+            if (i + 1 < grid.size()) best_option = min(best_option, _top_down(grid, i+1, j));
+            if (j + 1 < grid[0].size()) best_option = min(best_option, _top_down(grid, i, j+1));
+            return dp[i][j] = grid[i][j] + best_option;
+        }
+
+        int top_down(const vector<vector<int>>& grid){
+            memset(dp, -1, sizeof(dp));
+            return _top_down(grid, 0, 0);
+        }
+
+        int bottom_down(const vector<vector<int>>& grid){
+            int n = grid.size();
+            int m = grid[0].size();
+            // vector<vector<int>> dp(n, vector<int> (m));
+            vector<int> next_row(m);
+            for (int i=n-1;i>=0;i--){
+                vector<int> new_next_row(m);
+                for (int j=m-1;j>=0;j--){
+                    if (i == n - 1 && j == m - 1){
+                        new_next_row[j] = grid[i][j];
+                    }else {
+                        int best_option{INT_MAX};
+                        if (i + 1 < n) best_option = min(best_option, next_row[j]);
+                        if (j + 1 < m) best_option = min(best_option, new_next_row[j+1]);
+                        new_next_row[j] = grid[i][j] + best_option;
+                    }
+                }
+                next_row = new_next_row;
+            }
+            // return dp[0][0];
+            return next_row[0];
+        }
+};

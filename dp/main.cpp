@@ -13,4 +13,10 @@ int main(){
     {
         NinjaTraining problem;problem.solve();
     }
+    {
+        UniquePath problem;problem.solve();
+    }
+    {
+        MinPathSum problem;problem.solve();
+    }
 }
