@@ -294,3 +294,64 @@ class MinPathSum{
             return next_row[0];
         }
 };
+
+class SubsetSumEqualToK{
+    public:
+        void solve(){
+            vector<int> arr{4,3,2,1};
+            int k{5};
+            auto top_down_ans = top_down(arr, k);
+            assert(top_down_ans == true);
+            auto bottom_up_ans = bottom_up(arr, k);
+            assert(bottom_up_ans == top_down_ans);
+        }
+    private:
+
+        int dp[1001][1002];
+        bool _top_down(const vector<int>& arr, int target, int i){
+            if (target == 0) return true;
+            else if (i >= arr.size()) return false;
+            else if (arr[i] == target) return true;
+
+            if (dp[i][target] != -1) return dp[i][target];
+        
+            bool not_take = _top_down(arr, target, i+1);
+            bool take = false;
+            if (arr[i] < target) take = _top_down(arr, target - arr[i], i+1);
+            return dp[i][target] = not_take || take;
+        }
+
+        // top_down
+        // i: 0 -> 1 -> 2 -> n-1
+        // target: k -> k-1 -> ... 0
+
+        bool top_down(const vector<int>& arr, int k){
+            memset(dp, -1, sizeof(dp));
+            return _top_down(arr, k, 0);
+        }
+
+        bool bottom_up(const vector<int>& arr, int k){
+            int n = arr.size();
+            // vector<vector<bool>> dp(n, vector<bool> (k+1));
+            // for (int i=0;i<n;i++)dp[i][0] = true;
+            vector<bool> next_row(k+1);
+
+            for (int i=n-1;i>=0;i--){
+                vector<bool> new_next_row(k+1);
+                new_next_row[0] = true;
+                for (int target=1;target<=k;target++){
+                    if (arr[i] == target){
+                        new_next_row[target] = true;
+                    }else if (i + 1 < n) {
+                        bool not_take = next_row[target];
+                        bool take = false;
+                        if (arr[i] < target) take = next_row[target - arr[i]];
+                        new_next_row[target] = not_take || take;
+                    }
+                }
+                next_row = new_next_row;
+            }
+
+            return next_row[k];
+        }
+};

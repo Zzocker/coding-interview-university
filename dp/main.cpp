@@ -19,4 +19,7 @@ int main(){
     {
         MinPathSum problem;problem.solve();
     }
+    {
+        SubsetSumEqualToK problem;problem.solve();
+    }
 }

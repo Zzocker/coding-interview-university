@@ -14,3 +14,4 @@
 - [Ninja Training](https://www.codingninjas.com/studio/problems/ninja-s-training_3621003)
 - [Unique Paths](https://www.codingninjas.com/studio/problems/total-unique-paths_1081470)
 - [Minimum Path Sum](https://www.codingninjas.com/studio/problems/minimum-path-sum_985349)
+- [Subset Sum Equal To K](https://www.codingninjas.com/studio/problems/subset-sum-equal-to-k_1550954)
