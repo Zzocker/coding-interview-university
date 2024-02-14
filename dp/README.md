@@ -15,3 +15,4 @@
 - [Unique Paths](https://www.codingninjas.com/studio/problems/total-unique-paths_1081470)
 - [Minimum Path Sum](https://www.codingninjas.com/studio/problems/minimum-path-sum_985349)
 - [Subset Sum Equal To K](https://www.codingninjas.com/studio/problems/subset-sum-equal-to-k_1550954)
+- [Print LCS(Longest Common Subsequence)](https://www.youtube.com/watch?v=-zI4mrF2Pb4&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=28)

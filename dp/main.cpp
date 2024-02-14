@@ -22,4 +22,7 @@ int main(){
     {
         SubsetSumEqualToK problem;problem.solve();
     }
+    {
+        PrintLCS problem;problem.solve();
+    }
 }
