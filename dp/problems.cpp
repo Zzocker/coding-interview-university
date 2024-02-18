@@ -408,3 +408,88 @@ class PrintLCS{
             return ans;
         }
 };
+
+template <typename T> void print(const vector<T>& A){
+    for (auto a: A)cout << a << " ";
+    cout << endl;
+}
+
+class PrintLIS{
+    public:
+        void solve(){
+            vector<int> A{5,4,11,1,16,8};
+            auto ans = top_down(A);
+            vector<int> expect{5, 11, 16};
+            assert(ans.size() == expect.size());
+            for (int i=0;i<ans.size();i++)assert(ans[i] == expect[i]);
+        }
+
+    private:
+        vector<int> top_down(const vector<int>& A){
+            int n = A.size();
+            // dp[i]: represents largest lis
+            // ending at i
+            // hash[i]: represents prev element in LIS
+            vector<int> dp(n, 1);
+            vector<int> hash(n);
+            for (int i=0;i<n;i++)hash[i] = i;
+            for (int i=1;i<n;i++){
+                for (int j=0;j<i;j++){
+                    if (A[i] > A[j] && dp[i] < 1 + dp[j]){
+                        dp[i] = 1 + dp[j];
+                        hash[i] = j;
+                    }
+                }
+            }
+
+            int maxi{0};
+            for (int i=0;i<n;i++){
+                if (dp[i] > dp[maxi]) maxi = i;
+            }
+            vector<int> ans;
+            for (int i=maxi;;i = hash[i]){
+                ans.push_back(A[i]);
+                if (i == hash[i])break;
+            }
+            reverse(ans.begin(), ans.end());
+            return ans;
+        }
+};
+
+class GetLIS{
+    public:
+        void solve(){
+            vector<int> A{1,4,5,4,2,8};
+            auto ans = solution(A);
+            assert(ans == 4);
+        }
+    private:
+        int get_upper_bound(const vector<int>& A, int val){
+            int lo = 0,hi = A.size()-1;
+            int ans{0};
+            while (hi >= lo){
+                int mid = (hi - lo)/2 + lo;
+                if (A[mid] == val) return mid;
+                else if (val < A[mid]) {
+                    ans = mid;
+                    hi = mid - 1;
+                }
+                else {
+                    lo = mid + 1;
+                }
+            }
+            return ans;
+        }
+        int solution(const vector<int>& A){
+            vector<int> b;
+            b.push_back(A[0]);
+            for (int i=1;i<A.size();i++){
+                if (A[i] > b.back())b.push_back(A[i]);
+                else {
+                    int upper_bound = get_upper_bound(b, A[i]);
+                    b[upper_bound] = A[i];
+                }
+            }
+            return b.size();
+        }
+};

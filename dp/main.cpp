@@ -25,4 +25,10 @@ int main(){
     {
         PrintLCS problem;problem.solve();
     }
+    {
+        PrintLIS problem;problem.solve();
+    }
+    {
+        GetLIS problem;problem.solve();
+    }
 }

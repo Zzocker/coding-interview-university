@@ -16,3 +16,5 @@
 - [Minimum Path Sum](https://www.codingninjas.com/studio/problems/minimum-path-sum_985349)
 - [Subset Sum Equal To K](https://www.codingninjas.com/studio/problems/subset-sum-equal-to-k_1550954)
 - [Print LCS(Longest Common Subsequence)](https://www.youtube.com/watch?v=-zI4mrF2Pb4&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=28)
+- [Print LIS(Longest Increasing Subsequence)](https://www.youtube.com/watch?v=IFfYfonAFGc&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=43)
+- [Get LIS in nlog(n)](https://www.youtube.com/watch?v=on2hvxBXJH4&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=44)
