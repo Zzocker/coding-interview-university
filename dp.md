@@ -149,31 +149,31 @@
 | [ ] | [Maximum Compatibility Score Sum](https://leetcode.com/problems/maximum-compatibility-score-sum) |
 | [ ] | [Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence) |
 | [ ] | [Uncrossed Lines](https://leetcode.com/problems/uncrossed-lines) |
-| [ ] | [Coin Change II](https://leetcode.com/problems/coin-change-ii) |
-| [ ] | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum) |
-| [ ] | [Beautiful Arrangement](https://leetcode.com/problems/beautiful-arrangement) |
-| [ ] | [Unique Paths](https://leetcode.com/problems/unique-paths) |
-| [ ] | [Minimum Falling Path Sum](https://leetcode.com/problems/minimum-falling-path-sum) |
-| [ ] | [Arithmetic Slices](https://leetcode.com/problems/arithmetic-slices) |
-| [ ] | [Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings) |
-| [ ] | [Minimum Cost For Tickets](https://leetcode.com/problems/minimum-cost-for-tickets) |
-| [ ] | [Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses) |
-| [ ] | [Longest ZigZag Path in a Binary Tree](https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree) |
-| [ ] | [Count Number of Teams](https://leetcode.com/problems/count-number-of-teams) |
-| [ ] | [Airplane Seat Assignment Probability](https://leetcode.com/problems/airplane-seat-assignment-probability) |
-| [ ] | [Minimum Path Cost in a Grid](https://leetcode.com/problems/minimum-path-cost-in-a-grid) |
-| [ ] | [Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element) |
-| [ ] | [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning) |
-| [ ] | [Stone Game II](https://leetcode.com/problems/stone-game-ii) |
-| [ ] | [Number of Good Ways to Split a String](https://leetcode.com/problems/number-of-good-ways-to-split-a-string) |
-| [ ] | [Fair Distribution of Cookies](https://leetcode.com/problems/fair-distribution-of-cookies) |
-| [ ] | [Sort Integers by The Power Value](https://leetcode.com/problems/sort-integers-by-the-power-value) |
-| [ ] | [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings) |
-| [ ] | [Stone Game](https://leetcode.com/problems/stone-game) |
-| [ ] | [Count Substrings That Differ by One Character](https://leetcode.com/problems/count-substrings-that-differ-by-one-character) |
-| [ ] | [Egg Drop With 2 Eggs and N Floors](https://leetcode.com/problems/egg-drop-with-2-eggs-and-n-floors) |
-| [ ] | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses) |
-| [ ] | [Count Square Submatrices with All Ones](https://leetcode.com/problems/count-square-submatrices-with-all-ones) |
-| [ ] | [Partition Array for Maximum Sum](https://leetcode.com/problems/partition-array-for-maximum-sum) |
-| [ ] | [Count Sorted Vowel Strings](https://leetcode.com/problems/count-sorted-vowel-strings) |
-| [ ] | [All Possible Full Binary Trees](https://leetcode.com/problems/all-possible-full-binary-trees) |
+| [X] | [Coin Change II](https://leetcode.com/problems/coin-change-ii) |
+| [X] | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum) |
+| [X] | [Beautiful Arrangement](https://leetcode.com/problems/beautiful-arrangement) |
+| [X] | [Unique Paths](https://leetcode.com/problems/unique-paths) |
+| [X] | [Minimum Falling Path Sum](https://leetcode.com/problems/minimum-falling-path-sum) |
+| [X] | [Arithmetic Slices](https://leetcode.com/problems/arithmetic-slices) |
+| [X] | [Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings) |
+| [X] | [Minimum Cost For Tickets](https://leetcode.com/problems/minimum-cost-for-tickets) |
+| [X] | [Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses) |
+| [X] | [Longest ZigZag Path in a Binary Tree](https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree) |
+| [X] | [Count Number of Teams](https://leetcode.com/problems/count-number-of-teams) |
+| [X] | [Airplane Seat Assignment Probability](https://leetcode.com/problems/airplane-seat-assignment-probability) |
+| [X] | [Minimum Path Cost in a Grid](https://leetcode.com/problems/minimum-path-cost-in-a-grid) |
+| [X] | [Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element) |
+| [X] | [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning) |
+| [X] | [Stone Game II](https://leetcode.com/problems/stone-game-ii) |
+| [X] | [Number of Good Ways to Split a String](https://leetcode.com/problems/number-of-good-ways-to-split-a-string) |
+| [X] | [Fair Distribution of Cookies](https://leetcode.com/problems/fair-distribution-of-cookies) |
+| [X] | [Sort Integers by The Power Value](https://leetcode.com/problems/sort-integers-by-the-power-value) |
+| [X] | [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings) |
+| [X] | [Stone Game](https://leetcode.com/problems/stone-game) |
+| [X] | [Count Substrings That Differ by One Character](https://leetcode.com/problems/count-substrings-that-differ-by-one-character) |
+| [X] | [Egg Drop With 2 Eggs and N Floors](https://leetcode.com/problems/egg-drop-with-2-eggs-and-n-floors) |
+| [X] | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses) |
+| [X] | [Count Square Submatrices with All Ones](https://leetcode.com/problems/count-square-submatrices-with-all-ones) |
+| [X] | [Partition Array for Maximum Sum](https://leetcode.com/problems/partition-array-for-maximum-sum) |
+| [X] | [Count Sorted Vowel Strings](https://leetcode.com/problems/count-sorted-vowel-strings) |
+| [X] | [All Possible Full Binary Trees](https://leetcode.com/problems/all-possible-full-binary-trees) |
