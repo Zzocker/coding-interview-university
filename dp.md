@@ -144,11 +144,11 @@
 | [ ] | [Number of Dice Rolls With Target Sum](https://leetcode.com/problems/number-of-dice-rolls-with-target-sum) |
 | [ ] | [Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees) |
 | [ ] | [Longest String Chain](https://leetcode.com/problems/longest-string-chain) |
-| [ ] | [Flip String to Monotone Increasing](https://leetcode.com/problems/flip-string-to-monotone-increasing) |
-| [ ] | [Delete Operation for Two Strings](https://leetcode.com/problems/delete-operation-for-two-strings) |
-| [ ] | [Maximum Compatibility Score Sum](https://leetcode.com/problems/maximum-compatibility-score-sum) |
-| [ ] | [Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence) |
-| [ ] | [Uncrossed Lines](https://leetcode.com/problems/uncrossed-lines) |
+| [x] | [Flip String to Monotone Increasing](https://leetcode.com/problems/flip-string-to-monotone-increasing) |
+| [x] | [Delete Operation for Two Strings](https://leetcode.com/problems/delete-operation-for-two-strings) |
+| [x] | [Maximum Compatibility Score Sum](https://leetcode.com/problems/maximum-compatibility-score-sum) |
+| [x] | [Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence) |
+| [x] | [Uncrossed Lines](https://leetcode.com/problems/uncrossed-lines) |
 | [X] | [Coin Change II](https://leetcode.com/problems/coin-change-ii) |
 | [X] | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum) |
 | [X] | [Beautiful Arrangement](https://leetcode.com/problems/beautiful-arrangement) |
