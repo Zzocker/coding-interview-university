@@ -139,11 +139,11 @@
 | [ ] | [Maximum Absolute Sum of Any Subarray](https://leetcode.com/problems/maximum-absolute-sum-of-any-subarray) |
 | [ ] | [Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
 | [ ] | [Knight Dialer](https://leetcode.com/problems/knight-dialer) |
-| [ ] | [Integer Break](https://leetcode.com/problems/integer-break) |
-| [ ] | [Optimal Division](https://leetcode.com/problems/optimal-division) |
-| [ ] | [Number of Dice Rolls With Target Sum](https://leetcode.com/problems/number-of-dice-rolls-with-target-sum) |
-| [ ] | [Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees) |
-| [ ] | [Longest String Chain](https://leetcode.com/problems/longest-string-chain) |
+| [x] | [Integer Break](https://leetcode.com/problems/integer-break) |
+| [x] | [Optimal Division](https://leetcode.com/problems/optimal-division) |
+| [x] | [Number of Dice Rolls With Target Sum](https://leetcode.com/problems/number-of-dice-rolls-with-target-sum) |
+| [x] | [Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees) |
+| [x] | [Longest String Chain](https://leetcode.com/problems/longest-string-chain) |
 | [x] | [Flip String to Monotone Increasing](https://leetcode.com/problems/flip-string-to-monotone-increasing) |
 | [x] | [Delete Operation for Two Strings](https://leetcode.com/problems/delete-operation-for-two-strings) |
 | [x] | [Maximum Compatibility Score Sum](https://leetcode.com/problems/maximum-compatibility-score-sum) |
