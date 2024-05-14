@@ -132,13 +132,13 @@
 | [ ] | [Minimum Deletions to Make String Balanced](https://leetcode.com/problems/minimum-deletions-to-make-string-balanced) |
 | [ ] | [Number of Smooth Descent Periods of a Stock](https://leetcode.com/problems/number-of-smooth-descent-periods-of-a-stock) |
 | [ ] | [Best Sightseeing Pair](https://leetcode.com/problems/best-sightseeing-pair) |
-| [ ] | [Maximum Product of the Length of Two Palindromic Subsequences](https://leetcode.com/problems/maximum-product-of-the-length-of-two-palindromic-subsequences) |
-| [ ] | [Maximum Alternating Subsequence Sum](https://leetcode.com/problems/maximum-alternating-subsequence-sum) |
-| [ ] | [Filling Bookcase Shelves](https://leetcode.com/problems/filling-bookcase-shelves) |
-| [ ] | [Maximum Sum of Two Non-Overlapping Subarrays](https://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays) |
-| [ ] | [Maximum Absolute Sum of Any Subarray](https://leetcode.com/problems/maximum-absolute-sum-of-any-subarray) |
-| [ ] | [Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
-| [ ] | [Knight Dialer](https://leetcode.com/problems/knight-dialer) |
+| [x] | [Maximum Product of the Length of Two Palindromic Subsequences](https://leetcode.com/problems/maximum-product-of-the-length-of-two-palindromic-subsequences) |
+| [x] | [Maximum Alternating Subsequence Sum](https://leetcode.com/problems/maximum-alternating-subsequence-sum) |
+| [x] | [Filling Bookcase Shelves](https://leetcode.com/problems/filling-bookcase-shelves) |
+| [x] | [Maximum Sum of Two Non-Overlapping Subarrays](https://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays) |
+| [x] | [Maximum Absolute Sum of Any Subarray](https://leetcode.com/problems/maximum-absolute-sum-of-any-subarray) |
+| [x] | [Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
+| [ x | [Knight Dialer](https://leetcode.com/problems/knight-dialer) |
 | [x] | [Integer Break](https://leetcode.com/problems/integer-break) |
 | [x] | [Optimal Division](https://leetcode.com/problems/optimal-division) |
 | [x] | [Number of Dice Rolls With Target Sum](https://leetcode.com/problems/number-of-dice-rolls-with-target-sum) |
