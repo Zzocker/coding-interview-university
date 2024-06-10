@@ -1,7 +1,7 @@
 | Solved | Title |
 |--------|-------|
 | [x] | [Solving Questions With Brainpower](https://leetcode.com/problems/solving-questions-with-brainpower/description) |
-| [ ] | [Brick Wall](https://leetcode.com/problems/brick-wall/description) |
+| [x] | [Brick Wall](https://leetcode.com/problems/brick-wall/description) |
 | [ ] | [Max Sum of a Pair With Equal Sum of Digits](https://leetcode.com/problems/max-sum-of-a-pair-with-equal-sum-of-digits/description) |
 | [ ] | [Minimum Area Rectangle II](https://leetcode.com/problems/minimum-area-rectangle-ii/description) |
 | [ ] | [Perfect Squares](https://leetcode.com/problems/perfect-squares/description) |
