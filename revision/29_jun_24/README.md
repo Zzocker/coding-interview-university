@@ -11,7 +11,7 @@
 - BST
     - [x] Depth First Search
     - [x] Breadth first search
-- [ ] Heap
+- [x] Heap
 - [ ] Union Find
 - [ ] Segment Tree
 - [ ] AVL
