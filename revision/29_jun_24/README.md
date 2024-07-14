@@ -13,7 +13,7 @@
     - [x] Breadth first search
 - [x] Heap
 - [x] Union Find
-- [ ] Segment Tree
+- [x] Segment Tree
 - [ ] AVL
 - [ ] Trie
 
