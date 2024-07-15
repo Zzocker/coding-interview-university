@@ -14,7 +14,7 @@
 - [x] Heap
 - [x] Union Find
 - [x] Segment Tree
-- [ ] AVL
+- [x] AVL
 - [ ] Trie
 
 ## Graphs
