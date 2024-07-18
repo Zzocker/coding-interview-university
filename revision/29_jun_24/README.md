@@ -15,7 +15,7 @@
 - [x] Union Find
 - [x] Segment Tree
 - [x] AVL
-- [ ] Trie
+- [x] Trie
 
 ## Graphs
 - [ ] Adjacency array
